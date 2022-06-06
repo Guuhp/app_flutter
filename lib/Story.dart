@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class Story extends StatelessWidget {
@@ -9,7 +11,7 @@ class Story extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 15),
+      margin: const EdgeInsets.only(right: 13),
       child: Column(children: [
         CircleAvatar(
           radius: 35,

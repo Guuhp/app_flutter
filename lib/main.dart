@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trabalho_final/Post.dart';
 import 'package:trabalho_final/Story.dart';
 
 void main() {
@@ -12,76 +13,64 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(),
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Instagram'),
-            leading: const Icon(Icons.camera_alt_outlined),
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.send_outlined),
-                onPressed: () {},
-              ),
-            ],
-          ),
-          /* floatingActionButton: FloatingActionButton(
+        appBar: AppBar(
+          title: const Text('Instagram'),
+          leading: const Icon(Icons.camera_alt_outlined),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.send_outlined),
+              onPressed: () {},
+            ),
+          ],
+        ),
+        /* floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add, size: 40),
         ), */
-          bottomNavigationBar: BottomNavigationBar(items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              label: "",
+        body: ListView(
+          children: [
+            SizedBox(
+              height: 95,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  Story(
+                    profilePic:
+                        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                    userName: 'Gabriela',
+                  ),
+                  Story(
+                    profilePic:
+                        'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                    userName: 'Leandro',
+                  ),
+                  Story(
+                    profilePic:
+                        'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80',
+                    userName: 'Lucas',
+                  ),
+                  Story(
+                    profilePic:
+                        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                    userName: 'Matheus',
+                  ),
+                  Story(
+                    profilePic:
+                        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                    userName: 'Priscila',
+                  ),
+                  Story(
+                    profilePic:
+                        'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                    userName: 'Luna',
+                  ),
+                ],
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_outline),
-              label: "",
-            ),
-          ]),
-          body: ListView(
-            children: [
-              Container(
-                height: 120,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    Story(
-                      profilePic:
-                          'https://randomuser.me/api/portraits/men/33.jpg',
-                      userName: 'Lucas',
-                    ),
-                    Story(
-                      profilePic:
-                          'https://randomuser.me/api/portraits/women/49.jpg',
-                      userName: 'Denise',
-                    ),
-                    Story(
-                      profilePic:
-                          'https://randomuser.me/api/portraits/men/30.jpg',
-                      userName: 'Guuhp',
-                    ),
-                    Story(
-                      profilePic:
-                          'https://randomuser.me/api/portraits/women/44.jpg',
-                      userName: 'Priscila',
-                    ),
-                    Story(
-                      profilePic:
-                          'https://randomuser.me/api/portraits/men/33.jpg',
-                      userName: 'Guuhp',
-                    ),
-                    Story(
-                      profilePic:
-                          'https://randomuser.me/api/portraits/women/50.jpg',
-                      userName: 'Luna',
-                    ),
-                  ],
-                ),
-              )
-            ],
-          )),
+            const Post()
+          ],
+        ),
+      ),
     );
   }
 }
