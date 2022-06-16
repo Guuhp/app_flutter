@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:trabalho_final/Post.dart';
 import 'package:trabalho_final/Story.dart';
 
@@ -11,11 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Instagram'),
-          leading: const Icon(Icons.camera_alt_outlined),
+          title: const Text(
+            'Instagram',
+            style: TextStyle(fontFamily: 'GrandHotel', fontSize: 30),
+          ),
           actions: [
             IconButton(
               icon: const Icon(Icons.send_outlined),
@@ -64,10 +68,28 @@ class MyApp extends StatelessWidget {
                         'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
                     userName: 'Luna',
                   ),
+                  Story(
+                    profilePic:
+                        'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                    userName: 'Luna',
+                  ),
+                  Story(
+                    profilePic:
+                        'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                    userName: 'Luna',
+                  ),
                 ],
               ),
             ),
-            const Post()
+            SizedBox(
+              height: 510,
+              child: Container(
+                /*  color: Colors.amber, */
+                child: ListView(
+                  children: [Post(), Post(), Post()],
+                ),
+              ),
+            ),
           ],
         ),
       ),

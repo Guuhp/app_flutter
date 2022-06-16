@@ -66,10 +66,40 @@ class Post extends StatelessWidget {
             ),
           ),
           Container(
-            child: Text(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: const Text(
               "1,000 Likes",
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.2),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: RichText(
+              text: const TextSpan(
+                  style: TextStyle(color: Colors.white),
+                  children: [
+                    TextSpan(
+                        text: 'Gabriela',
+                        style: TextStyle(fontWeight: FontWeight.w700)),
+                    TextSpan(text: 'Nunca Desista dos seus sonhos')
+                  ]),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(left: 10),
+            child: const Text(
+              'view all <comments',
+              style: TextStyle(color: Colors.grey),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: const Text(
+              '2 hours ago',
+              style: TextStyle(color: Colors.grey),
             ),
           )
         ],

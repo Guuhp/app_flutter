@@ -11,7 +11,7 @@ class Story extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 13),
+      margin: const EdgeInsets.only(right: 15),
       child: Column(children: [
         CircleAvatar(
           radius: 35,
