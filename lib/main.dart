@@ -81,12 +81,30 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              height: 510,
-              child: Container(
-                /*  color: Colors.amber, */
+            Container(
+              height: 465,
+              child: SizedBox(
                 child: ListView(
-                  children: [Post(), Post(), Post()],
+                  children: [
+                    Post(
+                        picturePerfil:
+                            'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                        namePost: "luna",
+                        caption: "caption",
+                        pictureUrl:
+                            'https://images.unsplash.com/photo-1655472548136-53613c4baa01?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                        likes: 'likes',
+                        username: 'username'),
+                    Post(
+                        picturePerfil:
+                            'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                        namePost: "luna",
+                        caption: "caption",
+                        pictureUrl:
+                            'https://images.unsplash.com/photo-1655472548136-53613c4baa01?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                        likes: 'likes',
+                        username: 'username'),
+                  ],
                 ),
               ),
             ),

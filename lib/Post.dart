@@ -5,7 +5,19 @@ import 'package:flutter/material.dart';
 class Post extends StatelessWidget {
   const Post({
     Key? key,
+    required this.picturePerfil,
+    required this.namePost,
+    required this.caption,
+    required this.pictureUrl,
+    required this.likes,
+    required this.username,
   }) : super(key: key);
+  final String picturePerfil;
+  final String namePost;
+  final String caption;
+  final String pictureUrl;
+  final String likes;
+  final String username;
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +28,16 @@ class Post extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(5),
             child: Row(
-              children: const [
+              children: [
                 CircleAvatar(
                   radius: 28,
-                  backgroundImage: NetworkImage(
-                      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
+                  backgroundImage: NetworkImage(this.picturePerfil),
                 ),
                 SizedBox(
                   width: 10,
                 ),
                 Text(
-                  'Gabriela',
+                  this.namePost,
                   style: TextStyle(color: Colors.white),
                 )
               ],
@@ -36,7 +47,7 @@ class Post extends StatelessWidget {
             height: 550,
             color: Colors.blue,
             child: Image.network(
-              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+              this.pictureUrl,
               fit: BoxFit.cover,
             ),
           ),
@@ -67,8 +78,8 @@ class Post extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: const Text(
-              "1,000 Likes",
+            child: Text(
+              '${this.likes} likes',
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
@@ -78,14 +89,12 @@ class Post extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             child: RichText(
-              text: const TextSpan(
-                  style: TextStyle(color: Colors.white),
-                  children: [
-                    TextSpan(
-                        text: 'Gabriela',
-                        style: TextStyle(fontWeight: FontWeight.w700)),
-                    TextSpan(text: 'Nunca Desista dos seus sonhos')
-                  ]),
+              text: TextSpan(style: TextStyle(color: Colors.white), children: [
+                TextSpan(
+                    text: this.username,
+                    style: TextStyle(fontWeight: FontWeight.w700)),
+                TextSpan(text: ' ${this.caption} '),
+              ]),
             ),
           ),
           Container(
